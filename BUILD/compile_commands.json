@@ -1,0 +1,62 @@
+[
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/exceptio.c.obj -c D:/GitHub/MindMap/libgraphics/exceptio.c",
+  "file": "D:/GitHub/MindMap/libgraphics/exceptio.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/genlib.c.obj -c D:/GitHub/MindMap/libgraphics/genlib.c",
+  "file": "D:/GitHub/MindMap/libgraphics/genlib.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/graphics.c.obj -c D:/GitHub/MindMap/libgraphics/graphics.c",
+  "file": "D:/GitHub/MindMap/libgraphics/graphics.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/linkedlist.c.obj -c D:/GitHub/MindMap/libgraphics/linkedlist.c",
+  "file": "D:/GitHub/MindMap/libgraphics/linkedlist.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/random.c.obj -c D:/GitHub/MindMap/libgraphics/random.c",
+  "file": "D:/GitHub/MindMap/libgraphics/random.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/simpio.c.obj -c D:/GitHub/MindMap/libgraphics/simpio.c",
+  "file": "D:/GitHub/MindMap/libgraphics/simpio.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/libgraphics/strlib.c.obj -c D:/GitHub/MindMap/libgraphics/strlib.c",
+  "file": "D:/GitHub/MindMap/libgraphics/strlib.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj -c D:/GitHub/MindMap/simpleGUI/imgui.c",
+  "file": "D:/GitHub/MindMap/simpleGUI/imgui.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj -c D:/GitHub/MindMap/mindmap/ButtonRelated.c",
+  "file": "D:/GitHub/MindMap/mindmap/ButtonRelated.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj -c D:/GitHub/MindMap/mindmap/Line.c",
+  "file": "D:/GitHub/MindMap/mindmap/Line.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj -c D:/GitHub/MindMap/mindmap/TextBox.c",
+  "file": "D:/GitHub/MindMap/mindmap/TextBox.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmap.dir/includes_C.rsp -g -o CMakeFiles/mindmap.dir/mindmap/Main.c.obj -c D:/GitHub/MindMap/mindmap/Main.c",
+  "file": "D:/GitHub/MindMap/mindmap/Main.c"
+}
+]

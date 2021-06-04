@@ -1,0 +1,4 @@
+D:/GitHub/MindMap/BUILD/CMakeFiles/mindmaplib.dir
+D:/GitHub/MindMap/BUILD/CMakeFiles/rebuild_cache.dir
+D:/GitHub/MindMap/BUILD/CMakeFiles/mindmap.dir
+D:/GitHub/MindMap/BUILD/CMakeFiles/edit_cache.dir
