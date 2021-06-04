@@ -1,5 +1,9 @@
-# MindMap
- Interactive mind map
+# MindMap --VS code Edition
+This can be directly opened by `VS code` text editor, built by `cmake` 
+
+This is an interactive mind map, serving as C programming homework for MYZ's group.
+
+All the implemented functions are as follows.
 
 ```
 
@@ -27,9 +31,11 @@
 
 ```
 
+
+
 ---
 
-
+## Binary File
 
 0) 导入 (没写)
  * 解析指令 维护4个数组
@@ -42,15 +48,17 @@
 	用法 添加文本框至空余位置 （如果有多个空余位置 会从最近（时间上）空余的位置 到最早空余的位置顺序添加）
 
 2） 维护
- * FatherOfTextBox 数组 维护每个文本框父亲 向上跳得到深度 （没写，因为这是修改样式的）
- * PositionOfTextBox 数组 维护每个文本框位置 
- * PositionOfLine 数组 维护每条线的位置
- * TextOfTextBox 数组 记录每个文本框内的字符
- * StackForTextBox 栈 记录当前剩余放置文本框位置
-
+ * $FatherOfTextBox$ 数组 维护每个文本框父亲 向上跳得到深度 （没写，因为这是修改样式的）
+ * $PositionOfTextBox$ 数组 维护每个文本框位置 
+ * $PositionOfLine$ 数组 维护每条线的位置
+ * $TextOfTextBox$ 数组 记录每个文本框内的字符
+ * $StackForTextBox$ 栈 记录当前剩余放置文本框位置
 
 3) 导出 （没写）
- * 每次对PositionOf___ 数组进行写入的时候 记录一下指令
+
+ * 每次对$PositionOf\_\_\_$ 数组进行写入的时候 记录一下指令
+
+## Notes
 
 
 1. 线可以被textbox覆盖，这样就直接从中心画就行了
