@@ -8,6 +8,7 @@
 #include "Line.h"
 #include "TextBox.h"
 #include "Display.h"
+#include "Output.h"
 extern double winwidth, winheight;   // 窗口尺寸
 
 // // 清屏函数，provided in libgraphics
@@ -44,10 +45,6 @@ void MouseEventProcess(int x, int y, int button, int event)
 
 	display(); // 刷新显示
 }
-
-
-
-
 
 void Main(){
 	
