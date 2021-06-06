@@ -249,7 +249,8 @@ CMakeFiles/mindmap.dir/mindmap/Main.c.obj: ../mindmap/Main.c \
   ../lib/TextBox.h \
   ../lib/ButtonRelated.h \
   ../lib/Line.h \
-  ../lib/TextBox.h
+  ../lib/TextBox.h \
+  ../lib/Display.h
 
 
 D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
@@ -669,6 +670,8 @@ D:/mingw64/x86_64-w64-mingw32/include/wtypes.h:
 D:/mingw64/x86_64-w64-mingw32/include/rpcndr.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/rpcsal.h:
+
+../lib/Display.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
 

@@ -15,6 +15,7 @@ add_library(mindmaplib STATIC
 "mindmap/ButtonRelated.c"
 "mindmap/Line.c"
 "mindmap/TextBox.c"
+"mindmap/Display.c"
 )
 
 target_include_directories(mindmaplib

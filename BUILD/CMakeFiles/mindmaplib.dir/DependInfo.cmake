@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/GitHub/MindMap/libgraphics/simpio.c" "CMakeFiles/mindmaplib.dir/libgraphics/simpio.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/libgraphics/simpio.c.obj.d"
   "D:/GitHub/MindMap/libgraphics/strlib.c" "CMakeFiles/mindmaplib.dir/libgraphics/strlib.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/libgraphics/strlib.c.obj.d"
   "D:/GitHub/MindMap/mindmap/ButtonRelated.c" "CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj.d"
+  "D:/GitHub/MindMap/mindmap/Display.c" "CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj.d"
   "D:/GitHub/MindMap/mindmap/Line.c" "CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj.d"
   "D:/GitHub/MindMap/mindmap/TextBox.c" "CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj.d"
   "D:/GitHub/MindMap/simpleGUI/imgui.c" "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj.d"

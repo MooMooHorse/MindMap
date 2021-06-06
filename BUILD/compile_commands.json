@@ -56,6 +56,11 @@
 },
 {
   "directory": "D:/GitHub/MindMap/BUILD",
+  "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmaplib.dir/includes_C.rsp -g -o CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj -c D:/GitHub/MindMap/mindmap/Display.c",
+  "file": "D:/GitHub/MindMap/mindmap/Display.c"
+},
+{
+  "directory": "D:/GitHub/MindMap/BUILD",
   "command": "D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/mindmap.dir/includes_C.rsp -g -o CMakeFiles/mindmap.dir/mindmap/Main.c.obj -c D:/GitHub/MindMap/mindmap/Main.c",
   "file": "D:/GitHub/MindMap/mindmap/Main.c"
 }

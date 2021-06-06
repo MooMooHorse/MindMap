@@ -465,6 +465,42 @@ CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj: ../mindmap/ButtonRelated.
   ../lib/TextBox.h \
   ../lib/ButtonRelated.h
 
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj: ../mindmap/Display.c \
+  ../lib/Display.h \
+  ../lib/Line.h \
+  ../lib/imgui.h \
+  ../lib/graphics.h \
+  ../lib/extgraph.h \
+  ../lib/genlib.h \
+  D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+  D:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+  D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
+  D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
+  D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/limits.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/syslimits.h \
+  D:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
+  D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+  ../lib/boolean.h \
+  ../lib/TextBox.h \
+  ../lib/ButtonRelated.h \
+  ../lib/Line.h \
+  ../lib/ButtonRelated.h \
+  ../lib/TextBox.h \
+  ../lib/graphics.h
+
 CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj: ../mindmap/Line.c \
   ../lib/Line.h \
   ../lib/imgui.h \
@@ -818,6 +854,8 @@ D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
+
+../lib/Display.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/ole2.h:
 
@@ -1298,6 +1336,8 @@ D:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
 ../lib/Line.h:
 
 ../lib/TextBox.h:
+
+../mindmap/Display.c:
 
 ../mindmap/Line.c:
 

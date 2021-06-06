@@ -234,6 +234,21 @@ CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.s"
 	D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/GitHub/MindMap/mindmap/TextBox.c -o CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.s
 
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj: CMakeFiles/mindmaplib.dir/flags.make
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj: CMakeFiles/mindmaplib.dir/includes_C.rsp
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj: ../mindmap/Display.c
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj: CMakeFiles/mindmaplib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/GitHub/MindMap/BUILD/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj"
+	D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj -MF CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj.d -o CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj -c D:/GitHub/MindMap/mindmap/Display.c
+
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mindmaplib.dir/mindmap/Display.c.i"
+	D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/GitHub/MindMap/mindmap/Display.c > CMakeFiles/mindmaplib.dir/mindmap/Display.c.i
+
+CMakeFiles/mindmaplib.dir/mindmap/Display.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mindmaplib.dir/mindmap/Display.c.s"
+	D:/mingw64/bin/x86_64-w64-mingw32-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/GitHub/MindMap/mindmap/Display.c -o CMakeFiles/mindmaplib.dir/mindmap/Display.c.s
+
 # Object files for target mindmaplib
 mindmaplib_OBJECTS = \
 "CMakeFiles/mindmaplib.dir/libgraphics/exceptio.c.obj" \
@@ -246,7 +261,8 @@ mindmaplib_OBJECTS = \
 "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj" \
 "CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj" \
 "CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj" \
-"CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj"
+"CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj" \
+"CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj"
 
 # External object files for target mindmaplib
 mindmaplib_EXTERNAL_OBJECTS =
@@ -262,9 +278,10 @@ libmindmaplib.a: CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj
 libmindmaplib.a: CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj
 libmindmaplib.a: CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj
 libmindmaplib.a: CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj
+libmindmaplib.a: CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj
 libmindmaplib.a: CMakeFiles/mindmaplib.dir/build.make
 libmindmaplib.a: CMakeFiles/mindmaplib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/GitHub/MindMap/BUILD/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C static library libmindmaplib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/GitHub/MindMap/BUILD/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C static library libmindmaplib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/mindmaplib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mindmaplib.dir/link.txt --verbose=$(VERBOSE)
 

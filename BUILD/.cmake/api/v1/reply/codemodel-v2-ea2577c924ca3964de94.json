@@ -40,14 +40,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "mindmap::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mindmap-Debug-01e254fb45beff1ca19c.json",
+					"jsonFile" : "target-mindmap-Debug-d616b35090485deb9971.json",
 					"name" : "mindmap",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "mindmaplib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mindmaplib-Debug-0ae3c96d21cbfb63ebcc.json",
+					"jsonFile" : "target-mindmaplib-Debug-6e73870a7ccc29ee1094.json",
 					"name" : "mindmaplib",
 					"projectIndex" : 0
 				}

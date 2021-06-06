@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mindmaplib.dir/libgraphics/strlib.c.obj.d"
   "CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj"
   "CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj.d"
+  "CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj"
+  "CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj.d"
   "CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj"
   "CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj.d"
   "CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj"

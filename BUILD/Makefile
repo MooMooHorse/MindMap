@@ -334,6 +334,30 @@ mindmap/ButtonRelated.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.s
 .PHONY : mindmap/ButtonRelated.c.s
 
+mindmap/Display.obj: mindmap/Display.c.obj
+.PHONY : mindmap/Display.obj
+
+# target to build an object file
+mindmap/Display.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/Display.c.obj
+.PHONY : mindmap/Display.c.obj
+
+mindmap/Display.i: mindmap/Display.c.i
+.PHONY : mindmap/Display.i
+
+# target to preprocess a source file
+mindmap/Display.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/Display.c.i
+.PHONY : mindmap/Display.c.i
+
+mindmap/Display.s: mindmap/Display.c.s
+.PHONY : mindmap/Display.s
+
+# target to generate assembly for a file
+mindmap/Display.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/Display.c.s
+.PHONY : mindmap/Display.c.s
+
 mindmap/Line.obj: mindmap/Line.c.obj
 .PHONY : mindmap/Line.obj
 
@@ -464,6 +488,9 @@ help:
 	@echo "... mindmap/ButtonRelated.obj"
 	@echo "... mindmap/ButtonRelated.i"
 	@echo "... mindmap/ButtonRelated.s"
+	@echo "... mindmap/Display.obj"
+	@echo "... mindmap/Display.i"
+	@echo "... mindmap/Display.s"
 	@echo "... mindmap/Line.obj"
 	@echo "... mindmap/Line.i"
 	@echo "... mindmap/Line.s"

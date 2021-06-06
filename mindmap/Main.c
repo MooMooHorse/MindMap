@@ -7,15 +7,16 @@
 #include "ButtonRelated.h"
 #include "Line.h"
 #include "TextBox.h"
+#include "Display.h"
 extern double winwidth, winheight;   // 窗口尺寸
 
-// 清屏函数，provided in libgraphics
-void DisplayClear(void); 
+// // 清屏函数，provided in libgraphics
+// void DisplayClear(void); 
 // 计时器启动函数，provided in libgraphics
 void startTimer(int id,int timeinterval);
 
 // 用户的显示函数
-void display(void); 
+// void display(void); 
 
 // 用户的字符事件响应函数
 
@@ -44,29 +45,29 @@ void MouseEventProcess(int x, int y, int button, int event)
 	display(); // 刷新显示
 }
 
-void display()
-{
-	// 清屏
-	DisplayClear();
-
-	DrawButton();
-
-	DrawLines();
-
-	DrawTextBox();
-
-}
 
 
 
-void Main()
-{
+
+void Main(){
+	
+	char* OUTPUTFILENAME1="../OUTPUTDATA/001.txt";
+	char* OUTPUTFILENAME2="../OUTPUTDATA/002.txt";
+	char* OUTPUTFILENAME3="../OUTPUTDATA/003.txt";
+	
+	freopen(OUTPUTFILENAME1,"w",stdout);
+	
+	printf("1111111111111111111111111111111!\n");//第一行 忽略
+	
+	/*
+	* 输出文件前缀: 0000 1111 (空格只是为了更加直观，输出时不应该输出空格)
+	* 输出文件只应包含 0 1 换行符 还有文件开头一个向上的箭头
+	* 其中 文件开头向上箭头属于 未知因素 但由于对输出输入文件毫无影响 并不准备考虑其来源
+	*/
+	
 	SetWindowTitle("MindMap");
+	
 	InitGraphics();
-#if defined(DEBUG)//defined in TextBox.h
-	InitConsole();
-#endif
-
 	winwidth = GetWindowWidth();
     winheight = GetWindowHeight();
 
@@ -75,7 +76,7 @@ void Main()
 	registerKeyboardEvent(KeyboardEventProcess);// 键盘
 	registerMouseEvent(MouseEventProcess);      // 鼠标
 
-	setTextBoxColors("Blue",      "White",	"Red",	    "White",   1);
+	setTextBoxColors("Blue","White","Red","White",1);
 
 	AddTextBox(winwidth/2-1.5,winheight/2,winwidth/5,GetFontHeight()*2);
 	

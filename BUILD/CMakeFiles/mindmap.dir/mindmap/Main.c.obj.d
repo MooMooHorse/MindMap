@@ -240,4 +240,5 @@ CMakeFiles/mindmap.dir/mindmap/Main.c.obj: \
  D:/GitHub/MindMap/lib/ButtonRelated.h D:/GitHub/MindMap/lib/imgui.h \
  D:/GitHub/MindMap/lib/extgraph.h D:/GitHub/MindMap/lib/Line.h \
  D:/GitHub/MindMap/lib/TextBox.h D:/GitHub/MindMap/lib/ButtonRelated.h \
- D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/TextBox.h
+ D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/TextBox.h \
+ D:/GitHub/MindMap/lib/Display.h
