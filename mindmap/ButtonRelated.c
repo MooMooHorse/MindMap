@@ -24,10 +24,10 @@ void DrawButton(){
 	double h = fH*2;  // 控件高度
 	double w = winwidth/5; // 控件宽度
 	SetPenSize(1.5);
-	if( button(GenUIID(0), winwidth-w-0.01, h*2, w, h, "Add Line") )
+	if( Mybutton(GenUIID(0), winwidth-w-0.01, h*2, w, h, "Add Line") )
 	{	
 		if(GetActivatedTextBox()==NULL){
-			drawLabel(5,5,"Please choose a valid starting textbox first");
+			MydrawLabel(5,5,"Please choose a valid starting textbox first");
 			return ;
 		}
 		LineActivated=1;
@@ -36,10 +36,10 @@ void DrawButton(){
 	}
 
 	SetPenSize(1.5);
-	if( button(GenUIID(0), winwidth-w-0.01, 0.01, w, h, "Add TextBox") )
+	if( Mybutton(GenUIID(0), winwidth-w-0.01, 0.01, w, h, "Add TextBox") )
 	{	
 		if(StackTop==0){
-			drawLabel(5,5,"Please draw a line first");
+			MydrawLabel(5,5,"Please draw a line first");
 			return ;
 		}
 		AddTextBox(StackForTextBox[StackTop].x-w/2,StackForTextBox[StackTop].y-h/2,w,h);//w,h 暂定和 button 一样 可以调整 可以优化成可用户调节大小

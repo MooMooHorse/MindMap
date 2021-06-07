@@ -82,7 +82,7 @@ void Main(){
 	registerKeyboardEvent(KeyboardEventProcess);// МќХЬ
 	registerMouseEvent(MouseEventProcess);      // ЪѓБъ
 
-	setTextBoxColors("Blue","White","Red","White",1);
+	MysetTextBoxColors("Blue","White","Red","White",1);
 
 	AddTextBox(winwidth/2-1.5,winheight/2,winwidth/5,GetFontHeight()*2);
 	
