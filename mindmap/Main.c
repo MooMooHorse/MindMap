@@ -10,15 +10,15 @@
 #include "Display.h"
 #include "Output.h"
 #include "mygui.h"
+
+
 extern double winwidth, winheight;   // 窗口尺寸
 
-// // 清屏函数，provided in libgraphics
-// void DisplayClear(void); 
+// 清屏函数，provided in libgraphics
+void DisplayClear(void); 
 // 计时器启动函数，provided in libgraphics
 void startTimer(int id,int timeinterval);
 
-// 用户的显示函数
-// void display(void); 
 
 // 用户的字符事件响应函数
 

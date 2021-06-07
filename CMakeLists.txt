@@ -18,6 +18,7 @@ add_library(mindmaplib STATIC
 "mindmap/Display.c"
 "mindmap/Output.c"
 "simpleGUI/mygui.c"
+"mindmap/MyInput.c"
 )
 
 target_include_directories(mindmaplib

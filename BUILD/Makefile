@@ -406,6 +406,30 @@ mindmap/Main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmap.dir/build.make CMakeFiles/mindmap.dir/mindmap/Main.c.s
 .PHONY : mindmap/Main.c.s
 
+mindmap/MyInput.obj: mindmap/MyInput.c.obj
+.PHONY : mindmap/MyInput.obj
+
+# target to build an object file
+mindmap/MyInput.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/MyInput.c.obj
+.PHONY : mindmap/MyInput.c.obj
+
+mindmap/MyInput.i: mindmap/MyInput.c.i
+.PHONY : mindmap/MyInput.i
+
+# target to preprocess a source file
+mindmap/MyInput.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/MyInput.c.i
+.PHONY : mindmap/MyInput.c.i
+
+mindmap/MyInput.s: mindmap/MyInput.c.s
+.PHONY : mindmap/MyInput.s
+
+# target to generate assembly for a file
+mindmap/MyInput.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/mindmap/MyInput.c.s
+.PHONY : mindmap/MyInput.c.s
+
 mindmap/Output.obj: mindmap/Output.c.obj
 .PHONY : mindmap/Output.obj
 
@@ -545,6 +569,9 @@ help:
 	@echo "... mindmap/Main.obj"
 	@echo "... mindmap/Main.i"
 	@echo "... mindmap/Main.s"
+	@echo "... mindmap/MyInput.obj"
+	@echo "... mindmap/MyInput.i"
+	@echo "... mindmap/MyInput.s"
 	@echo "... mindmap/Output.obj"
 	@echo "... mindmap/Output.i"
 	@echo "... mindmap/Output.s"

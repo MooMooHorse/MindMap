@@ -83,12 +83,12 @@ clean: CMakeFiles/mindmap.dir/clean
 CMakeFiles/mindmaplib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/GitHub/MindMap/BUILD/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target mindmaplib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/GitHub/MindMap/BUILD/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target mindmaplib"
 .PHONY : CMakeFiles/mindmaplib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mindmaplib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/GitHub/MindMap/BUILD/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/GitHub/MindMap/BUILD/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mindmaplib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:/GitHub/MindMap/BUILD/CMakeFiles 0
 .PHONY : CMakeFiles/mindmaplib.dir/rule
@@ -114,7 +114,7 @@ CMakeFiles/mindmap.dir/all: CMakeFiles/mindmaplib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mindmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/GitHub/MindMap/BUILD/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/GitHub/MindMap/BUILD/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mindmap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:/GitHub/MindMap/BUILD/CMakeFiles 0
 .PHONY : CMakeFiles/mindmap.dir/rule
