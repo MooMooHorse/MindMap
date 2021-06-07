@@ -36,6 +36,10 @@ All the implemented functions are as follows.
 
 ```
 
+6. Clear
+
+0101 
+
 
 
 ---

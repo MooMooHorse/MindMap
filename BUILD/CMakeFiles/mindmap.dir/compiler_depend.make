@@ -247,7 +247,8 @@ CMakeFiles/mindmap.dir/mindmap/Main.c.obj: ../mindmap/Main.c \
   ../lib/TextBox.h \
   ../lib/Display.h \
   ../lib/Output.h \
-  ../lib/mygui.h
+  ../lib/mygui.h \
+  ../lib/MyInput.h
 
 
 D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
@@ -725,6 +726,8 @@ D:/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h:
 ../lib/linkedlist.h:
 
 ../lib/ButtonRelated.h:
+
+../lib/MyInput.h:
 
 ../lib/Line.h:
 

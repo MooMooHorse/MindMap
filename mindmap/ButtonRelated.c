@@ -24,6 +24,16 @@ void DrawButton(){
 	double h = fH*2;  // 控件高度
 	double w = winwidth/5; // 控件宽度
 	SetPenSize(1.5);
+	if( Mybutton(GenUIID(0), 0.01, 0.01, w/5, h, "1") ){
+
+	}
+	if( Mybutton(GenUIID(0), 0.01+w/5, 0.01, w/5, h, "2") ){
+		
+	}
+	if( Mybutton(GenUIID(0), 0.01+w/5*2, 0.01, w/5, h, "3") ){
+		
+	}
+	SetPenSize(1.5);
 	if( Mybutton(GenUIID(0), winwidth-w-0.01, h*2, w, h, "Add Line") )
 	{	
 		if(GetActivatedTextBox()==NULL){
@@ -45,6 +55,7 @@ void DrawButton(){
 		AddTextBox(StackForTextBox[StackTop].x-w/2,StackForTextBox[StackTop].y-h/2,w,h);//w,h 暂定和 button 一样 可以调整 可以优化成可用户调节大小
 		StackTop--;
 	}
+
 
 }
 

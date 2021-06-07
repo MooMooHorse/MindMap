@@ -6,5 +6,4 @@ char* SettingAPI01_GetFontColor();
 char* SettingAPI02_GetLineColor();
 char* SettingAPI03_GetTextBoxFrameColor();
 char* SettingAPI04_GetTextBoxFillColor();
-
 #endif

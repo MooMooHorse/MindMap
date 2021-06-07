@@ -135,15 +135,15 @@ void DrawTextBox(){
 
 typedef enum{Del=0,Ins} DOII;
 void EditBuffer(int Index,int ch,int doi){
+	int Len=strlen(BUFFER[Index]);
 	switch(doi){
-		int Len=strlen(BUFFER[Index]);
 		case Del:
-			BUFFER[Index][Len]=0;
 			Len--;
+			BUFFER[Index][Len]=0;
 		break;
 		case Ins:
-			Len++;
 			BUFFER[Index][Len]=ch;
+			Len++;
 		break;
 	}
 }

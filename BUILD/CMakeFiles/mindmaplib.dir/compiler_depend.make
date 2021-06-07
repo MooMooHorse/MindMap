@@ -507,6 +507,24 @@ CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj: ../mindmap/Line.c \
   ../lib/ButtonRelated.h \
   ../lib/Output.h
 
+CMakeFiles/mindmaplib.dir/mindmap/MyInput.c.obj: ../mindmap/MyInput.c \
+  ../lib/MyInput.h \
+  D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+  D:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+  D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
+  D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  D:/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
+  ../lib/Line.h \
+  ../lib/TextBox.h
+
 CMakeFiles/mindmaplib.dir/mindmap/Output.c.obj: ../mindmap/Output.c \
   ../lib/Output.h \
   D:/mingw64/x86_64-w64-mingw32/include/string.h \
@@ -1801,6 +1819,8 @@ D:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
 
 ../lib/mygui.h:
 
+../lib/MyInput.h:
+
 ../lib/Line.h:
 
 ../lib/TextBox.h:
@@ -1808,6 +1828,8 @@ D:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
 ../mindmap/Display.c:
 
 ../mindmap/Line.c:
+
+../mindmap/MyInput.c:
 
 ../mindmap/Output.c:
 

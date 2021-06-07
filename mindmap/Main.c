@@ -10,6 +10,7 @@
 #include "Display.h"
 #include "Output.h"
 #include "mygui.h"
+#include "MyInput.h"
 
 
 extern double winwidth, winheight;   // 窗口尺寸
@@ -52,15 +53,21 @@ void MouseEventProcess(int x, int y, int button, int event)
 }
 
 void Main(){
+// #if defined(DEBUG)
+	freopen("../METADATA/debug.txt","w",stdout);
+// #endif
+
+	ReadModel(1);
 	
-	char* OUTPUTFILENAME1="../OUTPUTDATA/001.txt";
-	char* OUTPUTFILENAME2="../OUTPUTDATA/002.txt";
-	char* OUTPUTFILENAME3="../OUTPUTDATA/003.txt";
+#if defined(OUTPUT)
+	char* OUTPUTFILENAME1="../OUTPUTDATA/usro1.txt";
+	char* OUTPUTFILENAME2="../OUTPUTDATA/usro2.txt";
+	char* OUTPUTFILENAME3="../OUTPUTDATA/usro3.txt";
 
 	freopen(OUTPUTFILENAME1,"w",stdout);
-	
-	printf("1111111111111111111111111111111!\n");//第一行 忽略
-	
+#endif
+
+	OutputFirstLine();
 
 	OutputSetting(1);
 	

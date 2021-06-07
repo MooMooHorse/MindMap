@@ -1,8 +1,8 @@
 #include "MyInput.h"
 #include <stdio.h>
-#include "Line.c"
+#include "Line.h"
 #include "TextBox.h"
-typedef enum{STYLE01=0,STYLE02,STYLE03} ALLSTYLES;
+typedef enum{STYLE01=1,STYLE02,STYLE03} ALLSTYLES;
 typedef enum{INSTR1=0,INSTR2,INSTR3,INSTR4} InstructionNames;
 typedef enum{FONT_COLOR=0,LINE_COLOR,TEXTBOXFRAME_COLOR,TEXTBOXFILL_COLOR} PROPERTY1;
 static char* Font_Color;
@@ -24,10 +24,18 @@ char* MAPP[16]={
     "Violet",
     "Magenta",
     "Cyan"
-}
+};
+
+
+
 
 typedef enum{IntegerPart=0,DoublePart} IOD; 
 static double GetDoubleNumber(int st,char Str[]){
+    double Sign=1.0;
+    if(Str[st]=='-'){
+        Sign=-Sign;
+        st++;
+    }
     double ret=0;
     double Temp=0.1;
     int InOrDo=0;
@@ -48,8 +56,12 @@ static double GetDoubleNumber(int st,char Str[]){
         }
         st++;
     }
-    return ret;
+    return ret*Sign;
 }
+
+
+
+
 /*
 * 功能： 如果 当前字符串前几位符合合法前缀(0000/1111)
 * 返回对应的合法特征
@@ -95,30 +107,31 @@ char* SettingAPI04_GetTextBoxFillColor(){
 void ReadModel(int StyleName){
     char* FILENAME;
     switch (StyleName){
-        case STYLE01: FILENAME="../OUTPUTDATA/001.txt"; 
-        case STYLE02: FILENAME="../OUTPUTDATA/002.txt"; 
-        case STYLE03: FILENAME="../OUTPUTDATA/003.txt";
+        case STYLE01: FILENAME="../OUTPUTDATA/001.txt"; break;
+        case STYLE02: FILENAME="../OUTPUTDATA/002.txt"; break;
+        case STYLE03: FILENAME="../OUTPUTDATA/003.txt"; break;
     }
     freopen(FILENAME,"r",stdin);
+    // printf("%s\n",FILENAME);
     char ST[128];
-    int LineNumber=0,j;
-    while(scanf("%s",ST!=EOF)){
-        if(!LineNumber) continue;//忽略第一行
+    int LineNumber=0,j,Property,Val;
+    
+    while(scanf("%s",ST)!=EOF){
+        // printf("%d\n",LineNumber);
+            // printf("Legal!\n");
+        if(!LineNumber){
+            LineNumber++;
+            continue;//忽略第一行
+        }
         if(CheckLegal(ST)){
+            Property=((ST[8]-'0')<<3)+((ST[9]-'0')<<2)+((ST[10]-'0')<<1)+ST[11]-'0';
+            Val=((ST[12]-'0')<<3)+((ST[13]-'0')<<2)+((ST[14]-'0')<<1)+ST[15]-'0';
             int Instr=((ST[4]-'0')<<1)+ST[5]-'0';
             switch(Instr){
                 case INSTR1:
                     switch(StyleName){
                         case STYLE01:
-                            int Property=((X[8]-'0')<<3)+
-                            ((X[9]-'0')<<2)+
-                            ((X[10]-'0')<<1)+
-                            X[11]-'0';
                             switch (Property){
-                                int Val=((X[12]-'0')<<3)+
-                                ((X[13]-'0')<<2)+
-                                ((X[14]-'0')<<1)+
-                                X[15]-'0';
                                 case FONT_COLOR:  
                                     Font_Color=MAPP[Val];
                                 break;
@@ -153,7 +166,13 @@ void ReadModel(int StyleName){
                     lx=GetDoubleNumber(j,ST);
                     while(ST[j]!='_') j++;
                     j++;
+                    if(LineNumber==7){
+                        printf("%d\n",j);
+                    }
                     ly=GetDoubleNumber(j,ST);
+                    // printf("%s\n",ST);
+                    // printf("%d\n",LineNumber);
+                    // printf("%lf_%lf_%lf_%lf\n",sx,sy,lx,ly);
                     StoreLine(sx,sy,lx,ly);
                 break;
                 case INSTR3:
@@ -173,19 +192,22 @@ void ReadModel(int StyleName){
                     while(ST[j]!='_') j++;
                     j++;
                     id=GetDoubleNumber(j,ST);
-                    AddTextBox(x,y,w,h,id);
+                    AddTextBox(x,y,w,h);
                 break;
                 case INSTR4:
                     j=7;
                     int Index,doi;
                     char ch;
+                    // printf("%s\n",ST);
                     Index=GetDoubleNumber(j,ST);
                     while(ST[j]!='_') j++;
                     j++;
                     ch=ST[j];
+                    // printf("%d\n",ch);
                     while(ST[j]!='_') j++;
                     j++;
                     doi=ST[j]-'0';
+                    // printf("%d %c %d\n",Index,ch,doi);
                     EditBuffer(Index,ch,doi);
                 break;
 

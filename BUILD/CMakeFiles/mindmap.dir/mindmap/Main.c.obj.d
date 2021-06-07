@@ -239,4 +239,5 @@ CMakeFiles/mindmap.dir/mindmap/Main.c.obj: \
  D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/linkedlist.h \
  D:/GitHub/MindMap/lib/ButtonRelated.h D:/GitHub/MindMap/lib/Line.h \
  D:/GitHub/MindMap/lib/TextBox.h D:/GitHub/MindMap/lib/Display.h \
- D:/GitHub/MindMap/lib/Output.h D:/GitHub/MindMap/lib/mygui.h
+ D:/GitHub/MindMap/lib/Output.h D:/GitHub/MindMap/lib/mygui.h \
+ D:/GitHub/MindMap/lib/MyInput.h

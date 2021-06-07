@@ -15,10 +15,20 @@
 * 否则一律直接编码处理
 */
 static void PrintPrefix1(){
+#if defined(OUTPUT)
     printf("1111");
+#endif
 }
 static void PrintPrefix0(){
+#if defined(OUTPUT)
 	printf("0000");
+#endif
+}
+
+void OutputFirstLine(){
+#if defined(OUTPUT)
+	printf("1111111111111111111111111111111!\n");//第一行 忽略
+#endif
 }
 
 /*
@@ -120,6 +130,7 @@ char* DecimalToBinaryString(int x){
 
 typedef enum{FONT_COLOR=0,LINE_COLOR,TEXTBOXFRAME_COLOR,TEXTBOXFILL_COLOR} PROPERTY1;
 void OutputSetting(int StyleName){
+#if defined(OUTPUT)
 	int Property=0;
 	for(Property=0;Property<=3;Property++){
 	    PrintPrefix1();
@@ -141,7 +152,7 @@ void OutputSetting(int StyleName){
 	    }
 		printf("\n");
 	}
-	
+#endif
 }
 
 /*
@@ -156,12 +167,14 @@ void OutputSetting(int StyleName){
 */
 
 void OutputLine(double sx,double sy,double lx,double ly){
+#if defined(OUTPUT)
 	PrintPrefix0();
 
 	printf("01");
 	
 	printf("_%lf_%lf_%lf_%lf_\n",sx,sy,lx,ly);
 
+#endif
 }
 
 
@@ -173,12 +186,13 @@ void OutputLine(double sx,double sy,double lx,double ly){
 * 指令前缀   指令名      文本框左下角坐标(x,y)与宽长数对(w,h)
 */
 void OutputTextBox(double x,double y,double w,double h,int Index){
+#if defined(OUTPUT)
 	PrintPrefix0();
 
 	printf("10");
 
 	printf("_%lf_%lf_%lf_%lf_%d_\n",x,y,w,h,Index);
-
+#endif
 }
 
 
@@ -194,11 +208,13 @@ void OutputTextBox(double x,double y,double w,double h,int Index){
 */
 
 void OutputAscii(int Index,int ch,int doi){
+#if defined(OUTPUT)
 	PrintPrefix0();
 
 	printf("11");
 
 	printf("_%d_%c_%d_\n",Index,(char)ch,doi);
+#endif
 }
 
 
