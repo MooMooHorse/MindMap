@@ -1,8 +1,6 @@
-CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj: \
- D:/GitHub/MindMap/mindmap/TextBox.c D:/GitHub/MindMap/lib/TextBox.h \
- D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/mygui.h \
- D:/GitHub/MindMap/lib/graphics.h D:/GitHub/MindMap/lib/extgraph.h \
- D:/GitHub/MindMap/lib/genlib.h \
+CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj: \
+ D:/GitHub/MindMap/simpleGUI/mygui.c D:/GitHub/MindMap/lib/graphics.h \
+ D:/GitHub/MindMap/lib/extgraph.h D:/GitHub/MindMap/lib/genlib.h \
  D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -241,4 +239,9 @@ CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/imm.h \
  D:/mingw64/x86_64-w64-mingw32/include/olectl.h \
  D:/mingw64/x86_64-w64-mingw32/include/ocidl.h \
+ D:/mingw64/x86_64-w64-mingw32/include/time.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+ D:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+ D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/mygui.h \
  D:/GitHub/MindMap/lib/Output.h

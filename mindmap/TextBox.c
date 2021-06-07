@@ -20,6 +20,8 @@
 #include <ocidl.h>
 #include <winuser.h>
 
+#include "Output.h"
+
 #if defined(DEBUG) //defined in TextBox.h
 #include <stdio.h>
 #endif
@@ -38,7 +40,7 @@ static int TextBoxIndex;
 
 static int ActivatedTextBox;// 编号从 1 开始 = 0 表明未选中
 
-bool INBOX(double x,double y,int k){
+int INBOX(double x,double y,int k){
 	y=winheight-y;
 	return x >= PositionOfTextBox[k].x
 		&& x <= (PositionOfTextBox[k].x+PositionOfTextBox[k].w)
@@ -98,7 +100,7 @@ void AddTextBox(double x,double y,double w,double h){
 	PositionOfTextBox[TextBoxIndex].y=y;
 	PositionOfTextBox[TextBoxIndex].w=w;
 	PositionOfTextBox[TextBoxIndex].h=h;
-	OutputTextBox(x,y,w,h);
+	OutputTextBox(x,y,w,h,TextBoxIndex);
 }
 
 Textbox* GetActivatedTextBox(){//接口 : 返回 ActivatedTextBox 的值

@@ -237,8 +237,6 @@ CMakeFiles/mindmap.dir/mindmap/Main.c.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
  D:/GitHub/MindMap/lib/boolean.h D:/GitHub/MindMap/lib/graphics.h \
  D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/linkedlist.h \
- D:/GitHub/MindMap/lib/ButtonRelated.h D:/GitHub/MindMap/lib/imgui.h \
- D:/GitHub/MindMap/lib/extgraph.h D:/GitHub/MindMap/lib/Line.h \
- D:/GitHub/MindMap/lib/TextBox.h D:/GitHub/MindMap/lib/ButtonRelated.h \
- D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/TextBox.h \
- D:/GitHub/MindMap/lib/Display.h
+ D:/GitHub/MindMap/lib/ButtonRelated.h D:/GitHub/MindMap/lib/Line.h \
+ D:/GitHub/MindMap/lib/TextBox.h D:/GitHub/MindMap/lib/Display.h \
+ D:/GitHub/MindMap/lib/Output.h D:/GitHub/MindMap/lib/mygui.h

@@ -1,7 +1,8 @@
 CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj: \
  D:/GitHub/MindMap/mindmap/Line.c D:/GitHub/MindMap/lib/Line.h \
- D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/graphics.h \
- D:/GitHub/MindMap/lib/extgraph.h D:/GitHub/MindMap/lib/genlib.h \
+ D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/mygui.h \
+ D:/GitHub/MindMap/lib/graphics.h D:/GitHub/MindMap/lib/extgraph.h \
+ D:/GitHub/MindMap/lib/genlib.h \
  D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -23,5 +24,6 @@ CMakeFiles/mindmaplib.dir/mindmap/Line.c.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
  D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
- D:/GitHub/MindMap/lib/boolean.h D:/GitHub/MindMap/lib/TextBox.h \
- D:/GitHub/MindMap/lib/ButtonRelated.h D:/GitHub/MindMap/lib/Line.h
+ D:/GitHub/MindMap/lib/boolean.h D:/GitHub/MindMap/lib/graphics.h \
+ D:/GitHub/MindMap/lib/TextBox.h D:/GitHub/MindMap/lib/ButtonRelated.h \
+ D:/GitHub/MindMap/lib/Output.h
