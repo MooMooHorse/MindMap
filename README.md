@@ -34,11 +34,13 @@ All the implemented functions are as follows.
 
 0100 LINENUMBEROFFSET
 
-```
-
 6. Clear
 
 0101 
+
+```
+
+
 
 
 
@@ -46,7 +48,7 @@ All the implemented functions are as follows.
 
 ## Binary File
 
-0) 导入 (没写)
+0) 导入 
  * 解析指令 维护4个数组
 
 
@@ -63,7 +65,7 @@ All the implemented functions are as follows.
  * $TextOfTextBox$ 数组 记录每个文本框内的字符
  * $StackForTextBox$ 栈 记录当前剩余放置文本框位置
 
-3) 导出 （没写）
+3) 导出
 
  * 每次对$PositionOf\_\_\_$ 数组进行写入的时候 记录一下指令
 
