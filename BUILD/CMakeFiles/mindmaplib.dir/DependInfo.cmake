@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/GitHub/MindMap/mindmap/Output.c" "CMakeFiles/mindmaplib.dir/mindmap/Output.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/mindmap/Output.c.obj.d"
   "D:/GitHub/MindMap/mindmap/TextBox.c" "CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj.d"
   "D:/GitHub/MindMap/simpleGUI/imgui.c" "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj.d"
+  "D:/GitHub/MindMap/simpleGUI/mygui.c" "CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj" "gcc" "CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj.d"
   )
 
 # Targets to which this target links.

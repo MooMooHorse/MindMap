@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "textbox.h": "c"
+        "textbox.h": "c",
+        "imgui.h": "c",
+        "mmsystem.h": "c"
     }
 }

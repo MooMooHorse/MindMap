@@ -36,7 +36,7 @@ void KeyboardEventProcess(int key, int event)
 {
 	uiGetKeyboard(key,event); // GUI获取键盘
 	MyuiGetKeyboard(key,event); // GUI获取键盘
-	TexBoxGetKey(key,evenet);
+	TextBoxGetKey(key,event);
 	display(); // 刷新显示
 }
 

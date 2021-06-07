@@ -5,4 +5,5 @@
 void OutputSetting(int StyleName);
 void OutputLine(double sx,double sy,double lx,double ly);
 void OutputTextBox(double x,double y,double w,double h,int Index);
+void OutputAscii(int Index,int ch,int doi);
 #endif

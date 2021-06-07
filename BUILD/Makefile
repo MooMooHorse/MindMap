@@ -478,6 +478,30 @@ simpleGUI/imgui.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.s
 .PHONY : simpleGUI/imgui.c.s
 
+simpleGUI/mygui.obj: simpleGUI/mygui.c.obj
+.PHONY : simpleGUI/mygui.obj
+
+# target to build an object file
+simpleGUI/mygui.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj
+.PHONY : simpleGUI/mygui.c.obj
+
+simpleGUI/mygui.i: simpleGUI/mygui.c.i
+.PHONY : simpleGUI/mygui.i
+
+# target to preprocess a source file
+simpleGUI/mygui.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.i
+.PHONY : simpleGUI/mygui.c.i
+
+simpleGUI/mygui.s: simpleGUI/mygui.c.s
+.PHONY : simpleGUI/mygui.s
+
+# target to generate assembly for a file
+simpleGUI/mygui.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindmaplib.dir/build.make CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.s
+.PHONY : simpleGUI/mygui.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -530,6 +554,9 @@ help:
 	@echo "... simpleGUI/imgui.obj"
 	@echo "... simpleGUI/imgui.i"
 	@echo "... simpleGUI/imgui.s"
+	@echo "... simpleGUI/mygui.obj"
+	@echo "... simpleGUI/mygui.i"
+	@echo "... simpleGUI/mygui.s"
 .PHONY : help
 
 

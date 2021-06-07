@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mindmaplib.dir/mindmap/TextBox.c.obj.d"
   "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj"
   "CMakeFiles/mindmaplib.dir/simpleGUI/imgui.c.obj.d"
+  "CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj"
+  "CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj.d"
   "libmindmaplib.a"
   "libmindmaplib.pdb"
 )

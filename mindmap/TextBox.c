@@ -24,6 +24,10 @@
 #include <stdio.h>
 #endif
 
+#if !defined(KMOD_SHIFT)
+#define KMOD_SHIFT 0x01
+#define KMOD_CTRL  0x02
+#endif
 
 
 static Textbox PositionOfTextBox[100];
@@ -117,15 +121,13 @@ void DrawTextBox(){
 	SetPenSize(1.5);
 	for(i=1;i<=TextBoxIndex;i++){
 		
-		if(Mytextbox(GenUIID(i-1),
+		Mytextbox(GenUIID(i-1),
 			PositionOfTextBox[i].x,
 			PositionOfTextBox[i].y,
 			PositionOfTextBox[i].w,
 			PositionOfTextBox[i].h,
-			BUFFER[i],sizeof(BUFFER[i])
-		)){
-			
-		}
+			BUFFER[i],sizeof(BUFFER[i]),i
+		);
 	}
 
 }

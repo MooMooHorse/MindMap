@@ -119,7 +119,7 @@ char* DecimalToBinaryString(int x){
 typedef enum{FONT_COLOR=0,LINE_COLOR,TEXTBOXFRAME_COLOR,TEXTBOXFILL_COLOR} PROPERTY1;
 void OutputSetting(int StyleName){
 	int Property=0;
-	for(Property=0;Property<=3;i++){
+	for(Property=0;Property<=3;Property++){
 	    PrintPrefix1();
 	    printf("00");
 	    printf("%d",StyleName);
@@ -190,7 +190,7 @@ void OutputTextBox(double x,double y,double w,double h,int Index){
 指令前缀  指令名      文本框编号 ascii码 删除或插入    
 */
 
-void OutputAscii(int Index,int ch,bool doi){
+void OutputAscii(int Index,int ch,int doi){
 	PrintPrefix0();
 
 	printf("11");
