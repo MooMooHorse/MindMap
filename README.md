@@ -91,15 +91,15 @@ All the implemented functions are as follows.
 
 ## 增加功能
 中文支持
-
-(1) Escape 逃脱落定线
+```
+(1) Escape 逃脱落定线 
 (2) Clear 清空 各种子程序里面的静态变量啊 什么能存的住的东西啊 全清零把。
 (3) 按钮 Dark/Light Mode
 (4) DefineColor() 函数增加颜色，这样就可以画出任意颜色
 (5) 调节文本框大小按钮，点击后当鼠标进入一定区域规定鼠标为一个角的位置，由于中心确定，实际上文本框被鼠标唯一确定。
 (6) 移动TextBox
-
-focus mode
+```
+**focus mode**
 
 (7) 导入背景 个人以为不需要 最多调整背景颜色，这只需要每次先画个贼nm大的矩形就行了
 
