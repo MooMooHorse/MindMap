@@ -26,6 +26,7 @@ static void PrintPrefix0(){
 */
 char* DecimalToBinaryString(int x){
 	static char RetStr[4]={'0','0','0','0'};
+	memset(RetStr,0,sizeof(RetStr));
 	int i=0;
 	while(x){
 		RetStr[3-i]+=(x&1);
@@ -130,16 +131,17 @@ void OutputSetting(int StyleName){
 	    	switch (Property){
 	    		case FONT_COLOR: printf("0100");
 	    		break;
-	    		case LINE_COLOR: printf("1010");
+	    		case LINE_COLOR: printf("0000");
 	    		break;
-	    		case TEXTBOXFRAME_COLOR: printf("1010");
+	    		case TEXTBOXFRAME_COLOR: printf("0000");
 	    		break;
-	    		case TEXTBOXFILL_COLOR: printf("1010");
+	    		case TEXTBOXFILL_COLOR: printf("0000");
 	    		break;
 	    	}
 	    }
+		printf("\n");
 	}
-	printf("\n");
+	
 }
 
 /*
@@ -158,7 +160,7 @@ void OutputLine(double sx,double sy,double lx,double ly){
 
 	printf("01");
 	
-	printf("_%ld_%ld_%ld_%ld\n",sx,sy,lx,ly);
+	printf("_%lf_%lf_%lf_%lf_\n",sx,sy,lx,ly);
 
 }
 
@@ -175,7 +177,7 @@ void OutputTextBox(double x,double y,double w,double h,int Index){
 
 	printf("10");
 
-	printf("_%ld_%ld_%ld_%ld_%d\n",x,y,w,h,Index);
+	printf("_%lf_%lf_%lf_%lf_%d_\n",x,y,w,h,Index);
 
 }
 
@@ -196,7 +198,7 @@ void OutputAscii(int Index,int ch,int doi){
 
 	printf("11");
 
-	printf("_%d_%c_%d",Index,(char)ch,doi);
+	printf("_%d_%c_%d_\n",Index,(char)ch,doi);
 }
 
 

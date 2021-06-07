@@ -36,14 +36,14 @@ void DrawLines(){
 	for(i=1;i<=NumberOfLines;i++){
 		Line li=PositionOfLine[i];
 		MovePen(li.sx,li.sy);
-		SetPenColor("Blue");
+		SetPenColor("Black");
 		SetPenSize(3);
 		DrawLine(li.lx,li.ly);
 	}
 	if(DrawActivatedLineOrNot){
 		Line li=ActivatedLine;
 		MovePen(li.sx,li.sy);
-		SetPenColor("Red");
+		SetPenColor("Gray");
 		SetPenSize(3);
 		DrawLine(li.lx,li.ly);
 	}
