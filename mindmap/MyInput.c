@@ -1,7 +1,55 @@
 #include "MyInput.h"
 #include <stdio.h>
+#include "Line.c"
+#include "TextBox.h"
 typedef enum{STYLE01=0,STYLE02,STYLE03} ALLSTYLES;
 typedef enum{INSTR1=0,INSTR2,INSTR3,INSTR4} InstructionNames;
+typedef enum{FONT_COLOR=0,LINE_COLOR,TEXTBOXFRAME_COLOR,TEXTBOXFILL_COLOR} PROPERTY1;
+static char* Font_Color;
+static char* Line_Color;
+static char* TextBoxFrame_Color;
+static char* TextBoxFill_Color;
+char* MAPP[16]={
+    "Black", 
+    "Dark Gray",
+    "Gray",
+    "Light Gray",
+    "White",
+    "Brown",
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Blue",
+    "Violet",
+    "Magenta",
+    "Cyan"
+}
+
+typedef enum{IntegerPart=0,DoublePart} IOD; 
+static double GetDoubleNumber(int st,char Str[]){
+    double ret=0;
+    double Temp=0.1;
+    int InOrDo=0;
+    while(Str[st]!='_'){
+        if(Str[st]=='.'){
+            InOrDo^=1;
+            st++;
+            continue;
+        }
+        switch(InOrDo){
+            case IntegerPart:
+                ret=ret*10+Str[st]-'0';
+            break; 
+            case DoublePart:
+                ret=ret+Temp*(Str[st]-'0');
+                Temp/=10.0;
+            break;
+        }
+        st++;
+    }
+    return ret;
+}
 /*
 * 功能： 如果 当前字符串前几位符合合法前缀(0000/1111)
 * 返回对应的合法特征
@@ -14,6 +62,23 @@ static int CheckLegal(char X[]){
     }
     return 0;
 }
+
+/*
+* 功能： 四个接口，可以读入当前的属性值
+*/
+char* SettingAPI01_GetFontColor(){
+    return Font_Color;
+}
+char* SettingAPI02_GetLineColor(){
+    return Line_Color;
+}
+char* SettingAPI03_GetTextBoxFrameColor(){
+    return TextBoxFrame_Color;
+}
+char* SettingAPI04_GetTextBoxFillColor(){
+    return TextBoxFill_Color;
+}
+
 
 /*
 * 功能：能够导入三种不同样式的文件模板。
@@ -30,9 +95,9 @@ static int CheckLegal(char X[]){
 void ReadModel(int StyleName){
     char* FILENAME;
     switch (StyleName){
-        case(STYLE01): FILENAME="../OUTPUTDATA/001.txt"; 
-        case(STYLE02): FILENAME="../OUTPUTDATA/002.txt"; 
-        case(STYLE03): FILENAME="../OUTPUTDATA/003.txt";
+        case STYLE01: FILENAME="../OUTPUTDATA/001.txt"; 
+        case STYLE02: FILENAME="../OUTPUTDATA/002.txt"; 
+        case STYLE03: FILENAME="../OUTPUTDATA/003.txt";
     }
     freopen(FILENAME,"r",stdin);
     char ST[128];
@@ -42,17 +107,86 @@ void ReadModel(int StyleName){
         if(CheckLegal(ST)){
             int Instr=((ST[4]-'0')<<1)+ST[5]-'0';
             switch(Instr){
-                case (INSTR1):
+                case INSTR1:
+                    switch(StyleName){
+                        case STYLE01:
+                            int Property=((X[8]-'0')<<3)+
+                            ((X[9]-'0')<<2)+
+                            ((X[10]-'0')<<1)+
+                            X[11]-'0';
+                            switch (Property){
+                                int Val=((X[12]-'0')<<3)+
+                                ((X[13]-'0')<<2)+
+                                ((X[14]-'0')<<1)+
+                                X[15]-'0';
+                                case FONT_COLOR:  
+                                    Font_Color=MAPP[Val];
+                                break;
+                                case LINE_COLOR: 
+                                    Line_Color=MAPP[Val];
+                                break;
+                                case TEXTBOXFRAME_COLOR: 
+                                    TextBoxFrame_Color=MAPP[Val];
+                                break;
+                                case TEXTBOXFILL_COLOR: 
+                                    TextBoxFill_Color=MAPP[Val];
+                                break;
+                            }
+                        break;
+                        case STYLE02:
 
+                        break;
+                        case STYLE03:
+
+                        break;
+                    }
                 break;
-                case (INSTR2):
-
+                case INSTR2:
+                    j=7;
+                    double sx,sy,lx,ly;
+                    sx=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    sy=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    lx=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    ly=GetDoubleNumber(j,ST);
+                    StoreLine(sx,sy,lx,ly);
                 break;
-                case (INSTR3):
-
+                case INSTR3:
+                    j=7;
+                    double x,y,w,h;
+                    int id;
+                    x=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    y=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    w=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    h=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    id=GetDoubleNumber(j,ST);
+                    AddTextBox(x,y,w,h,id);
                 break;
-                case(INSTR4):
-
+                case INSTR4:
+                    j=7;
+                    int Index,doi;
+                    char ch;
+                    Index=GetDoubleNumber(j,ST);
+                    while(ST[j]!='_') j++;
+                    j++;
+                    ch=ST[j];
+                    while(ST[j]!='_') j++;
+                    j++;
+                    doi=ST[j]-'0';
+                    EditBuffer(Index,ch,doi);
                 break;
 
             }
@@ -63,3 +197,4 @@ void ReadModel(int StyleName){
 
     fclose(stdin);//关闭标准输入流，请注意不要注释掉
 }
+

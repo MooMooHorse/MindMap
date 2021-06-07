@@ -14,5 +14,6 @@ void AddTextBox(double x,double y,double w,double h);
 Textbox* GetActivatedTextBox();
 void DrawTextBox();
 void TextBoxGetKey(int key,int event);
+void EditBuffer(int Index,int ch,int doi);
 extern double winwidth, winheight;
 #endif

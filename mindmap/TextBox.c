@@ -108,14 +108,14 @@ Textbox* GetActivatedTextBox(){//接口 : 返回 ActivatedTextBox 的值
 	return &PositionOfTextBox[ActivatedTextBox];
 }
 
-void DrawTextBox(){
-	static char BUFFER[25][80]={
+static char BUFFER[25][80]={
 		"Please Enter","Please Enter","Please Enter","Please Enter","Please Enter",
 		"Please Enter","Please Enter","Please Enter","Please Enter","Please Enter",
 		"Please Enter","Please Enter","Please Enter","Please Enter","Please Enter",
 		"Please Enter","Please Enter","Please Enter","Please Enter","Please Enter",
 		"Please Enter","Please Enter","Please Enter","Please Enter","Please Enter"
-	};
+};
+void DrawTextBox(){
 	int i;
 #if defined(DEBUG)
 //	printf("%d\n",TextBoxIndex);
@@ -131,5 +131,19 @@ void DrawTextBox(){
 			BUFFER[i],sizeof(BUFFER[i]),i
 		);
 	}
+}
 
+typedef enum{Del=0,Ins} DOII;
+void EditBuffer(int Index,int ch,int doi){
+	switch(doi){
+		int Len=strlen(BUFFER[Index]);
+		case Del:
+			BUFFER[Index][Len]=0;
+			Len--;
+		break;
+		case Ins:
+			Len++;
+			BUFFER[Index][Len]=ch;
+		break;
+	}
 }
