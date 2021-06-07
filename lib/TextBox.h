@@ -3,10 +3,6 @@
 #define _TextBox_h_
 //#define DEBUG
 
-#include "imgui.h"
-#include "graphics.h"
-#include "extgraph.h"
-
 
 typedef struct{
 	double x,y;
@@ -17,6 +13,6 @@ void TextBoxGetMouse(int x,int y,int button,int event);
 void AddTextBox(double x,double y,double w,double h);
 Textbox* GetActivatedTextBox();
 void DrawTextBox();
-
+void TextBoxGetKey(int key,int event);
 extern double winwidth, winheight;
 #endif

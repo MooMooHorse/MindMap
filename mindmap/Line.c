@@ -1,4 +1,11 @@
 #include "Line.h"
+#include "imgui.h"
+#include "mygui.h"
+#include "graphics.h"
+#include "extgraph.h"
+#include "TextBox.h"
+#include "ButtonRelated.h"
+#include "Output.h"
 #if defined(DEBUG)//defined in TextBox.h
 #include <stdio.h>
 #endif
@@ -21,7 +28,7 @@ void StoreLine(double sx,double sy,double lx,double ly){
 	PositionOfLine[NumberOfLines].sy=sy;
 	PositionOfLine[NumberOfLines].lx=lx;
 	PositionOfLine[NumberOfLines].ly=ly;
-
+	OutputLine(sx,sy,lx,ly);
 }
 
 void DrawLines(){

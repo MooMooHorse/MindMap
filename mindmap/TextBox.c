@@ -1,10 +1,29 @@
 #include "TextBox.h"
 
+#include "imgui.h"
+#include "mygui.h"
 
+#include "graphics.h"
+#include "extgraph.h"
+#include "genlib.h"
+#include "simpio.h"
+#include "conio.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+
+#include <windows.h>
+#include <olectl.h>
+#include <mmsystem.h>
+#include <wingdi.h>
+#include <ole2.h>
+#include <ocidl.h>
+#include <winuser.h>
 
 #if defined(DEBUG) //defined in TextBox.h
 #include <stdio.h>
 #endif
+
 
 
 static Textbox PositionOfTextBox[100];
@@ -35,6 +54,39 @@ void TextBoxGetMouse(int x,int y,int button,int event){
 	}
 }
 
+static int keyModifiers;
+static int keyPress;
+void TextBoxGetKey(int key,int event){
+	if( event==KEY_DOWN ) 
+	{
+		switch (key ) 
+		{
+			case VK_SHIFT:
+				keyModifiers |= KMOD_SHIFT;
+				break;
+			case VK_CONTROL:
+				keyModifiers |= KMOD_CTRL;
+				break;
+			default:
+				keyPress = key;
+		}
+	} 
+	else if( event==KEY_UP )
+	{
+		switch (key ) 
+		{
+			case VK_SHIFT:
+				keyModifiers &= ~KMOD_SHIFT;
+				break;
+			case VK_CONTROL:
+				keyModifiers &= ~KMOD_CTRL;
+				break;
+			default:
+				keyPress = 0;
+		}
+	}
+}
+
 
 void AddTextBox(double x,double y,double w,double h){
 	TextBoxIndex++;
@@ -42,6 +94,7 @@ void AddTextBox(double x,double y,double w,double h){
 	PositionOfTextBox[TextBoxIndex].y=y;
 	PositionOfTextBox[TextBoxIndex].w=w;
 	PositionOfTextBox[TextBoxIndex].h=h;
+	OutputTextBox(x,y,w,h);
 }
 
 Textbox* GetActivatedTextBox(){//接口 : 返回 ActivatedTextBox 的值
@@ -64,13 +117,15 @@ void DrawTextBox(){
 	SetPenSize(1.5);
 	for(i=1;i<=TextBoxIndex;i++){
 		
-		textbox(GenUIID(i-1),
+		if(Mytextbox(GenUIID(i-1),
 			PositionOfTextBox[i].x,
 			PositionOfTextBox[i].y,
 			PositionOfTextBox[i].w,
 			PositionOfTextBox[i].h,
 			BUFFER[i],sizeof(BUFFER[i])
-		);
+		)){
+			
+		}
 	}
 
 }

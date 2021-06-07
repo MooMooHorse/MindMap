@@ -1,5 +1,10 @@
 #include "ButtonRelated.h"
-
+#include "imgui.h"
+#include "mygui.h"
+#include "graphics.h"
+#include "extgraph.h"
+#include "Line.h"
+#include "TextBox.h"
 
 typedef struct{
 	double x,y;

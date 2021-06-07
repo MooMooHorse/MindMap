@@ -9,6 +9,7 @@
 #include "TextBox.h"
 #include "Display.h"
 #include "Output.h"
+#include "mygui.h"
 extern double winwidth, winheight;   // 窗口尺寸
 
 // // 清屏函数，provided in libgraphics
@@ -26,6 +27,7 @@ double winwidth, winheight;   // 窗口尺寸
 void CharEventProcess(char ch)
 {
 	uiGetChar(ch); // GUI字符输入
+	MyuiGetChar(ch);
 	display(); //刷新显示
 }
 
@@ -33,6 +35,8 @@ void CharEventProcess(char ch)
 void KeyboardEventProcess(int key, int event)
 {
 	uiGetKeyboard(key,event); // GUI获取键盘
+	MyuiGetKeyboard(key,event); // GUI获取键盘
+	TexBoxGetKey(key,evenet);
 	display(); // 刷新显示
 }
 
@@ -40,6 +44,7 @@ void KeyboardEventProcess(int key, int event)
 void MouseEventProcess(int x, int y, int button, int event)
 {
 	uiGetMouse(x,y,button,event); //GUI获取鼠标
+	MyuiGetMouse(x,y,button,event); //GUI获取鼠标
 	DrawActivatedLine(x,y,button,event);
 	TextBoxGetMouse(x,y,button,event);
 
@@ -51,11 +56,15 @@ void Main(){
 	char* OUTPUTFILENAME1="../OUTPUTDATA/001.txt";
 	char* OUTPUTFILENAME2="../OUTPUTDATA/002.txt";
 	char* OUTPUTFILENAME3="../OUTPUTDATA/003.txt";
-	
+
 	freopen(OUTPUTFILENAME1,"w",stdout);
 	
 	printf("1111111111111111111111111111111!\n");//第一行 忽略
 	
+
+	OutputSetting(1);
+	
+
 	/*
 	* 输出文件前缀: 0000 1111 (空格只是为了更加直观，输出时不应该输出空格)
 	* 输出文件只应包含 0 1 换行符 还有文件开头一个向上的箭头
