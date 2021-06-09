@@ -37,5 +37,3 @@ In the first modified version, Import will not be supported for these functions.
 The importance of having `Withdraw` for import is **LARGE**
 
 ---
-
-Let's get to work.
