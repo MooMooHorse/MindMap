@@ -7,7 +7,8 @@
 
 extern double winwidth, winheight;
 
-void StoreLine(double sx,double sy,double lx,double ly);
+void ClearLine();
+void StoreLine(double sx,double sy,double lx,double ly,int Index);
 void DrawLines();
 void DrawActivatedLine(int x,int y,int button,int event);
 

@@ -243,5 +243,5 @@ CMakeFiles/mindmaplib.dir/simpleGUI/mygui.c.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
  D:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  D:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
- D:/GitHub/MindMap/lib/imgui.h D:/GitHub/MindMap/lib/mygui.h \
- D:/GitHub/MindMap/lib/Output.h
+ D:/GitHub/MindMap/lib/mygui.h D:/GitHub/MindMap/lib/Output.h \
+ D:/GitHub/MindMap/lib/ButtonRelated.h

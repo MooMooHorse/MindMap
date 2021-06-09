@@ -146,7 +146,7 @@ void MydrawMenuBar(double x, double y, double w, double h);
  *   0 - 文本没有被编辑
  *   1 - 被编辑了
  */
-int Mytextbox(int id, double x, double y, double w, double h, char textbuf[], int buflen,int Index);
+int Mytextbox(int id, double x, double y, double w, double h, char textbuf[], int buflen,int Index, int Dep);
 
 /*
  * 设置控件的颜色
@@ -177,7 +177,7 @@ void MyusePredefinedTexBoxColors(int k);
 void MydrawLabel(double x, double y, char *label);
 
 /* 画一个矩形 */
-void MydrawRectangle(double x, double y, double w, double h, int fillflag);
+void MydrawRectangle(double x, double y, double w, double h, int fillflag,double gr);
 
 /* 显示带字符串标签的矩形
  * 
@@ -190,5 +190,8 @@ void MydrawRectangle(double x, double y, double w, double h, int fillflag);
  *            0 不填充
  */
 void MydrawBox(double x, double y, double w, double h, int fillflag, char *label, char xalignment, char *labelColor);
+
+int GetESC();
+
 
 #endif // define ____ui_button_h______

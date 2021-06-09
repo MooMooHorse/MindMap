@@ -25,4 +25,7 @@ CMakeFiles/mindmaplib.dir/mindmap/ButtonRelated.c.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
  D:/mingw64/x86_64-w64-mingw32/include/stddef.h \
  D:/GitHub/MindMap/lib/boolean.h D:/GitHub/MindMap/lib/graphics.h \
- D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/TextBox.h
+ D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/TextBox.h \
+ D:/GitHub/MindMap/lib/Output.h D:/GitHub/MindMap/lib/MyInput.h \
+ D:/mingw64/x86_64-w64-mingw32/include/string.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h

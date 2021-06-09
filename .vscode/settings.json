@@ -2,6 +2,9 @@
     "files.associations": {
         "textbox.h": "c",
         "imgui.h": "c",
-        "mmsystem.h": "c"
+        "mmsystem.h": "c",
+        "stdio.h": "c",
+        "display.h": "c",
+        "graphics.h": "c"
     }
 }

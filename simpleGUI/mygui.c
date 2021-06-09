@@ -17,9 +17,10 @@
 
 #include <time.h>
 
-#include "imgui.h"
+// #include "imgui.h"
 #include "mygui.h"
 #include "Output.h"
+#include "ButtonRelated.h"
 
 
 #if !defined(KMOD_SHIFT)
@@ -43,6 +44,7 @@ typedef struct {
 
 static UIState gs_UIState;
 static double  gs_menuRect[4];
+static int ESCC=0;
 
 /* 测试：坐标点(x,y)是否位于包围和 [x1,x2] X [y1,y2] 内部 */
 static bool inBox(double x, double y, double x1, double x2, double y1, double y2)
@@ -64,7 +66,10 @@ static void setMenuRect(double x1, double x2, double y1, double y2)
 }
 
 
-
+static void mySetPenColor(char *color)
+{
+	if( color && strlen(color)>0 ) SetPenColor(color);
+}
 /* 
  *  libgraphics 预定义的颜色名称
  *
@@ -192,6 +197,8 @@ void MyuiGetMouse(int x, int y, int button, int event)
 	 }
 }
 
+
+
 /* 调用该函数,得到键盘的输入 */
 void MyuiGetKeyboard(int key, int event)
 {
@@ -205,6 +212,9 @@ void MyuiGetKeyboard(int key, int event)
 			case VK_CONTROL:
 				gs_UIState.keyModifiers |= KMOD_CTRL;
 				break;
+			case VK_ESCAPE:
+				ESCC=1;
+			break;
 			default:
 				gs_UIState.keyPress = key;
 		}
@@ -219,6 +229,9 @@ void MyuiGetKeyboard(int key, int event)
 			case VK_CONTROL:
 				gs_UIState.keyModifiers &= ~KMOD_CTRL;
 				break;
+			case VK_ESCAPE:
+				ESCC=0;
+			break;
 			default:
 				gs_UIState.keyPress = 0;
 		}
@@ -301,13 +314,13 @@ int Mybutton(int id, double x, double y, double w, double h, char *label)
 		label, 'C', labelColor);
 	if( gs_button_color.fillflag ) {
 		mySetPenColor( labelColor );
-		MydrawRectangle(x+sinkx, y+sinky, w, h, 0);
+		MydrawRectangle(x+sinkx, y+sinky, w, h, 0,1);
 	}
 
 	// 画键盘提示, show a small ractangle frane
 	if( gs_UIState.kbdItem == id ) {
 		mySetPenColor( labelColor );
-		MydrawRectangle(x+sinkx+shrink, y+sinky+shrink, w-2*shrink, h-2*shrink, 0);
+		MydrawRectangle(x+sinkx+shrink, y+sinky+shrink, w-2*shrink, h-2*shrink, 0,1);
 	}
 
 	if( gs_UIState.clickedItem==id && // must be clicked before
@@ -454,7 +467,7 @@ int MymenuList(int id, double x, double y, double w, double wlist, double h, cha
 void MydrawMenuBar(double x, double y, double w, double h)
 {
 	mySetPenColor(gs_menu_color.frame);
-	MydrawRectangle(x,y,w,h,gs_menu_color.fillflag);
+	MydrawRectangle(x,y,w,h,gs_menu_color.fillflag,1);
 }
 
 
@@ -478,7 +491,7 @@ void MydrawMenuBar(double x, double y, double w, double h)
  *   0 - 文本没有被编辑
  *   1 - 被编辑了
  */
-int Mytextbox(int id, double x, double y, double w, double h, char textbuf[], int buflen,int Index)
+int Mytextbox(int id, double x, double y, double w, double h, char textbuf[], int buflen,int Index,int Dep)
 {
 	char * frameColor = gs_textbox_color.frame;
 	char * labelColor = gs_textbox_color.label;
@@ -507,9 +520,90 @@ int Mytextbox(int id, double x, double y, double w, double h, char textbuf[], in
 
 	// Render the text box
 	mySetPenColor(frameColor);
-	MydrawRectangle(x, y, w, h, gs_textbox_color.fillflag);
+	
+	MovePen(x, y);
+	if( gs_textbox_color.fillflag ) StartFilledRegion(1); 
+	{
+		switch(Get_Mode()){
+			case 0: 
+	// printf("\nBlam!\n");
+				mySetPenColor("White");
+			break;
+			case 1:
+				mySetPenColor("Black");
+			break;
+		}
+		DrawLine(0, h);
+		DrawLine(w, 0);
+		DrawLine(0, -h);
+		DrawLine(-w, 0);
+	}
+	switch(Get_Mode()){
+		case 0: 
+			switch(Dep){
+				case 0:
+				mySetPenColor("Layer01Dark");
+				break; 
+				case 1:
+				mySetPenColor("Layer02Dark");
+				break;
+				case 2:
+				mySetPenColor("Layer03Dark");
+				break;
+				case 3:
+				mySetPenColor("Layer04Dark");
+				break;
+			}
+		break;
+		case 1:
+			switch(Dep){
+				case 0:
+				mySetPenColor("Layer04Dark");
+				break; 
+				case 1:
+				mySetPenColor("Layer03Dark");
+				break;
+				case 2:
+				mySetPenColor("Layer02Dark");
+				break;
+				case 3:
+				mySetPenColor("Layer01Dark");
+				break;
+			}
+		break;
+	}
+	
+	if( gs_textbox_color.fillflag ) EndFilledRegion();
+
+
+	switch(Get_Mode()){
+		case 0: 
+// printf("\nBlam!\n");
+			mySetPenColor("White");
+		break;
+		case 1:
+			mySetPenColor("Black");
+		break;
+	}
+	SetPenSize(3);
+	DrawLine(0, h);
+	DrawLine(w, 0);
+	DrawLine(0, -h);
+	DrawLine(-w, 0);
+	SetPenSize(1.5);
+
 	// show text
-	mySetPenColor(labelColor);
+	switch(Get_Mode()){
+		case 0: 
+			if(Dep>=2) mySetPenColor("White");
+			else mySetPenColor("Black");
+		break;
+		case 1:
+			if(Dep>=2) mySetPenColor("Black");
+			else mySetPenColor("White");
+		break;
+	}
+	// mySetPenColor(labelColor);
 	MovePen(x+indent, textPosY);
 	DrawTextString(textbuf);
 	// add cursor if we have keyboard focus
@@ -572,10 +666,10 @@ int Mytextbox(int id, double x, double y, double w, double h, char textbuf[], in
 
 
 /* 画一个矩形 */
-void MydrawRectangle(double x, double y, double w, double h, int fillflag)
+void MydrawRectangle(double x, double y, double w, double h, int fillflag,double gr)
 {
 	MovePen(x, y);
-	if( fillflag ) StartFilledRegion(1); 
+	if( fillflag ) StartFilledRegion(gr); 
 	{
 		DrawLine(0, h);
 		DrawLine(w, 0);
@@ -590,7 +684,7 @@ void MydrawBox(double x, double y, double w, double h, int fillflag, char *label
 {
 	double fa = GetFontAscent();
 	// rect
-	MydrawRectangle(x,y,w,h,fillflag);
+	MydrawRectangle(x,y,w,h,fillflag,1);
 	// text
 	if( label && strlen(label)>0 ) {
 		mySetPenColor(labelColor);
@@ -611,4 +705,9 @@ void MydrawLabel(double x, double y, char *label)
 		MovePen(x,y);
 		DrawTextString(label);
 	}
+}
+
+
+int GetESC(){
+	return ESCC;
 }

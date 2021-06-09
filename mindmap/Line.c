@@ -6,21 +6,38 @@
 #include "TextBox.h"
 #include "ButtonRelated.h"
 #include "Output.h"
+
+#include <string.h>
+#include <math.h>
 #if defined(DEBUG)//defined in TextBox.h
 #include <stdio.h>
 #endif
 typedef struct{
 	double sx,sy,lx,ly;
+	int fa;
 }Line;
 
-static Line PositionOfLine[101];// 最多 100 条线 编号从 1 开始
-//要更多当然可以，但考虑实际情况...
+static Line PositionOfLine[101];
 static int NumberOfLines;
 
 static Line ActivatedLine;
 static int DrawActivatedLineOrNot;
 
-void StoreLine(double sx,double sy,double lx,double ly){
+/*
+功能： 清空线
+用法： 在ButtonRelated.c 下的总Clear() 函数中调用即可
+*/
+void ClearLine(){
+	NumberOfLines=0;
+	LineDeactivated();
+	DrawActivatedLineOrNot=0;
+}
+
+/*
+功能： 存储线
+用法： 传入线起点(sx,sy) 线长度向量(lx,ly) 线连接文本框编号
+*/
+void StoreLine(double sx,double sy,double lx,double ly,int Index){
 
 	NumberOfLines++;
 
@@ -28,24 +45,64 @@ void StoreLine(double sx,double sy,double lx,double ly){
 	PositionOfLine[NumberOfLines].sy=sy;
 	PositionOfLine[NumberOfLines].lx=lx;
 	PositionOfLine[NumberOfLines].ly=ly;
-	OutputLine(sx,sy,lx,ly);
+	PositionOfLine[NumberOfLines].fa=Index;
+	OutputLine(sx,sy,lx,ly,Index);//+fa
 }
-
+static void DrawCurve(double sx,double sy,double lx,double ly){
+	int SPLIT=200;
+	double t=ly/SPLIT;
+	double lasx=0,lasy=0;
+	for(int i=1;i<=SPLIT;i++){
+		double cury=t*i;
+		double curx=lx*cury*cury/ly/ly;
+		MovePen(sx+curx,sy+cury);
+		DrawLine(curx-lasx,cury-lasy);
+		lasx=curx,lasy=cury;
+	}
+}
 void DrawLines(){
 	int i;
 	for(i=1;i<=NumberOfLines;i++){
 		Line li=PositionOfLine[i];
 		MovePen(li.sx,li.sy);
-		SetPenColor("Black");
+		switch(Get_Mode()){
+			case 0: 
+				SetPenColor("White");
+			break;
+			case 1:
+				SetPenColor("Black");
+			break;
+		}
 		SetPenSize(3);
-		DrawLine(li.lx,li.ly);
+		switch(Get_Style()){
+			case 1: 
+				DrawLine(li.lx,li.ly);
+			break;
+			case 2:
+				DrawCurve(li.sx,li.sy,li.lx,li.ly);
+			break;
+			case 3:
+				DrawCurve(li.sx,li.sy,li.lx,li.ly);
+			break;
+		}
 	}
 	if(DrawActivatedLineOrNot){
 		Line li=ActivatedLine;
 		MovePen(li.sx,li.sy);
 		SetPenColor("Gray");
 		SetPenSize(3);
-		DrawLine(li.lx,li.ly);
+		switch(Get_Style()){
+			case 1: 
+				DrawLine(li.lx,li.ly);
+			break;
+			case 2:
+				// DrawLine(li.lx,li.ly);
+				DrawCurve(li.sx,li.sy,li.lx,li.ly);
+			break;
+			case 3:
+				DrawCurve(li.sx,li.sy,li.lx,li.ly);
+			break;
+		}
 	}
 }
 
@@ -68,8 +125,8 @@ void DrawActivatedLine(int xx,int yy,int button,int event){
 		ActivatedLine.ly=winheight-ScaleXInches(yy)-y;
 		if(event==BUTTON_DOWN){
 			LineDeactivated();
-			StoreLine(x,y,ScaleXInches(xx)-x,winheight-ScaleXInches(yy)-y);
-			PushPendingPosition(ScaleXInches(xx),winheight-ScaleXInches(yy));
+			StoreLine(x,y,ScaleXInches(xx)-x,winheight-ScaleXInches(yy)-y,GetActivatedTextBoxIndex());
+			PushPendingPosition(ScaleXInches(xx),winheight-ScaleXInches(yy),GetActivatedTextBoxIndex());
 		}
 	}
 

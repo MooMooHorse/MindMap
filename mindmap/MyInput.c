@@ -1,7 +1,10 @@
 #include "MyInput.h"
 #include <stdio.h>
+#include <string.h>
 #include "Line.h"
+#include "graphics.h"
 #include "TextBox.h"
+#include "ButtonRelated.h"
 typedef enum{STYLE01=1,STYLE02,STYLE03} ALLSTYLES;
 typedef enum{INSTR1=0,INSTR2,INSTR3,INSTR4} InstructionNames;
 typedef enum{FONT_COLOR=0,LINE_COLOR,TEXTBOXFRAME_COLOR,TEXTBOXFILL_COLOR} PROPERTY1;
@@ -105,16 +108,17 @@ char* SettingAPI04_GetTextBoxFillColor(){
 *
 */
 void ReadModel(int StyleName){
-    char* FILENAME;
-    switch (StyleName){
-        case STYLE01: FILENAME="../OUTPUTDATA/001.txt"; break;
-        case STYLE02: FILENAME="../OUTPUTDATA/002.txt"; break;
-        case STYLE03: FILENAME="../OUTPUTDATA/003.txt"; break;
-    }
-    freopen(FILENAME,"r",stdin);
+    // char* FILENAME;
+    // switch (StyleName){
+    //     case STYLE01: FILENAME="../OUTPUTDATA/001.txt"; break;
+    //     case STYLE02: FILENAME="../OUTPUTDATA/002.txt"; break;
+    //     case STYLE03: FILENAME="../OUTPUTDATA/003.txt"; break;
+    // }
+    // freopen(FILENAME,"r",stdin);
     // printf("%s\n",FILENAME);
     char ST[128];
     int LineNumber=0,j,Property,Val;
+    int STY;
     
     while(scanf("%s",ST)!=EOF){
         // printf("%d\n",LineNumber);
@@ -123,94 +127,114 @@ void ReadModel(int StyleName){
             LineNumber++;
             continue;//忽略第一行
         }
+        // printf("%d\n",LineNumber);
         if(CheckLegal(ST)){
             Property=((ST[8]-'0')<<3)+((ST[9]-'0')<<2)+((ST[10]-'0')<<1)+ST[11]-'0';
             Val=((ST[12]-'0')<<3)+((ST[13]-'0')<<2)+((ST[14]-'0')<<1)+ST[15]-'0';
             int Instr=((ST[4]-'0')<<1)+ST[5]-'0';
-            switch(Instr){
-                case INSTR1:
-                    switch(StyleName){
-                        case STYLE01:
-                            switch (Property){
-                                case FONT_COLOR:  
-                                    Font_Color=MAPP[Val];
-                                break;
-                                case LINE_COLOR: 
-                                    Line_Color=MAPP[Val];
-                                break;
-                                case TEXTBOXFRAME_COLOR: 
-                                    TextBoxFrame_Color=MAPP[Val];
-                                break;
-                                case TEXTBOXFILL_COLOR: 
-                                    TextBoxFill_Color=MAPP[Val];
-                                break;
-                            }
-                        break;
-                        case STYLE02:
+            if(ST[strlen(ST)-1]=='0'){
+                // printf("%d\n",Instr);
+                switch(Instr){
+                    case INSTR1:
+                        switch(StyleName){
+                            case STYLE01:
+                                switch (Property){
+                                    case FONT_COLOR:  
+                                        Font_Color=MAPP[Val];
+                                    break;
+                                    case LINE_COLOR: 
+                                        Line_Color=MAPP[Val];
+                                    break;
+                                    case TEXTBOXFRAME_COLOR: 
+                                        TextBoxFrame_Color=MAPP[Val];
+                                    break;
+                                    case TEXTBOXFILL_COLOR: 
+                                        TextBoxFill_Color=MAPP[Val];
+                                    break;
+                                }
+                            break;
+                            case STYLE02:
 
-                        break;
-                        case STYLE03:
+                            break;
+                            case STYLE03:
 
-                        break;
-                    }
-                break;
-                case INSTR2:
-                    j=7;
-                    double sx,sy,lx,ly;
-                    sx=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    sy=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    lx=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    if(LineNumber==7){
-                        printf("%d\n",j);
-                    }
-                    ly=GetDoubleNumber(j,ST);
-                    // printf("%s\n",ST);
-                    // printf("%d\n",LineNumber);
-                    // printf("%lf_%lf_%lf_%lf\n",sx,sy,lx,ly);
-                    StoreLine(sx,sy,lx,ly);
-                break;
-                case INSTR3:
-                    j=7;
-                    double x,y,w,h;
-                    int id;
-                    x=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    y=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    w=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    h=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    id=GetDoubleNumber(j,ST);
-                    AddTextBox(x,y,w,h);
-                break;
-                case INSTR4:
-                    j=7;
-                    int Index,doi;
-                    char ch;
-                    // printf("%s\n",ST);
-                    Index=GetDoubleNumber(j,ST);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    ch=ST[j];
-                    // printf("%d\n",ch);
-                    while(ST[j]!='_') j++;
-                    j++;
-                    doi=ST[j]-'0';
-                    // printf("%d %c %d\n",Index,ch,doi);
-                    EditBuffer(Index,ch,doi);
-                break;
+                            break;
+                        }
+                    break;
+                    case INSTR2:
+                        j=7;
+                        double sx,sy,lx,ly;
+                        int Ind;
+                        sx=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        sy=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        lx=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        ly=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        Ind=GetDoubleNumber(j,ST);
+                        StoreLine(sx,sy,lx,ly,Ind);
+                    break;
+                    case INSTR3:
+                        j=7;
+                        double x,y,w,h;
+                        int id,fa;
+                        x=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        y=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        w=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        h=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        id=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        fa=GetDoubleNumber(j,ST);
+                        AddTextBox(x,y,w,h,fa);
+                    break;
+                    case INSTR4:
+                        j=7;
+                        int Index,doi;
+                        int ch;
+                        #if defined(DEBUG)
+                        // printf("%s\n",ST);
+                        #endif
+                        Index=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        ch=GetDoubleNumber(j,ST);
+                        // printf("%d\n",ch);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        doi=ST[j]-'0';
+                        // printf("%d %c %d\n",Index,ch,doi);
+                        EditBuffer(Index,ch,doi);
+                    break;
 
+                }
+            }
+            else{
+                switch(Instr){
+                    case INSTR1:
+                        Clear();
+                    break;
+                    case INSTR2:
+                        
+                        j=7;
+                        STY=GetDoubleNumber(j,ST);
+                        ChangeStyleType(STY);
+                    break;
+                }
             }
         }   
 

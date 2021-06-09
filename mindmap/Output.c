@@ -52,8 +52,8 @@ char* DecimalToBinaryString(int x){
 *
 * 指令格式：
 *
-* (1111)       00      Instruction[9:8]      Instruction[7:4]   Instruction[3:0]
-* 指令前缀    指令名          样式种类                属性名              属性值
+* (1111)       00      Instruction[9:8]      Instruction[7:4]   Instruction[3:0]  0
+* 指令前缀    指令名          样式种类                属性名              属性值     扩展指令名
 *
 *
 * 指令名：    当前指令是样式设定指令，指令名为00
@@ -150,6 +150,7 @@ void OutputSetting(int StyleName){
 	    		break;
 	    	}
 	    }
+		printf("0");
 		printf("\n");
 	}
 #endif
@@ -158,21 +159,21 @@ void OutputSetting(int StyleName){
 /*
 * 功能：    把当前加的线（落定线）转换成指令
 * 落定线：  已经确定下来的线
-* 用法：    记录线段起点(sx,sy)与长度向量(lx,ly) 
+* 用法：    记录线段起点(sx,sy)与长度向量(lx,ly) 与线连接的父亲文本框 编号
 * 指令格式：
-* (0000)  01    _sx_sy_lx_ly
-* 指令前缀 指令名 线段起点(sx,sy)与长度向量(lx,ly) 
+* (0000)  01    _sx_sy_lx_ly_Index_                              0
+* 指令前缀 指令名 线段起点(sx,sy)与长度向量(lx,ly) 文本框编号   扩展指令名
 * 由于 高精度小数转换比较麻烦，且与直接编码几乎一致
 * 故采用 直接打印 然后统一文件编码的方式
 */
 
-void OutputLine(double sx,double sy,double lx,double ly){
+void OutputLine(double sx,double sy,double lx,double ly,int Index){
 #if defined(OUTPUT)
 	PrintPrefix0();
 
 	printf("01");
 	
-	printf("_%lf_%lf_%lf_%lf_\n",sx,sy,lx,ly);
+	printf("_%lf_%lf_%lf_%lf_%d_0\n",sx,sy,lx,ly,Index);
 
 #endif
 }
@@ -180,18 +181,18 @@ void OutputLine(double sx,double sy,double lx,double ly){
 
 /*
 * 功能： 	  把当前的文本框转换成指令
-* 用法：   记录当前文本框左下角坐标(x,y)与宽长数对(w,h)与当前文本框编号
+* 用法：   记录当前文本框左下角坐标(x,y)与宽长数对(w,h)与当前文本框与其父亲编号
 * 指令格式： 
-* (0000)     10          _x_y_w_h_Index
-* 指令前缀   指令名      文本框左下角坐标(x,y)与宽长数对(w,h)
+* (0000)     10          _x_y_w_h_Index_fa_                    0
+* 指令前缀   指令名      文本框左下角坐标(x,y)与宽长数对(w,h)  扩展指令名
 */
-void OutputTextBox(double x,double y,double w,double h,int Index){
+void OutputTextBox(double x,double y,double w,double h,int Index,int fa){
 #if defined(OUTPUT)
 	PrintPrefix0();
 
 	printf("10");
 
-	printf("_%lf_%lf_%lf_%lf_%d_\n",x,y,w,h,Index);
+	printf("_%lf_%lf_%lf_%lf_%d_%d_0\n",x,y,w,h,Index,fa);
 #endif
 }
 
@@ -203,8 +204,8 @@ void OutputTextBox(double x,double y,double w,double h,int Index){
 * 如果是删除状态的话，记录 输入字符为$
 * doi: delete/insert (0/1)
 * 指令格式
-(0000)   11        _Index_ch_doi
-指令前缀  指令名      文本框编号 ascii码 删除或插入    
+(0000)   11        _Index_ch_doi                      0
+指令前缀  指令名      文本框编号 ascii码 删除或插入     扩展指令名
 */
 
 void OutputAscii(int Index,int ch,int doi){
@@ -213,14 +214,41 @@ void OutputAscii(int Index,int ch,int doi){
 
 	printf("11");
 
-	printf("_%d_%c_%d_\n",Index,(char)ch,doi);
+	printf("_%d_%d_%d_0\n",Index,ch,doi);
+#endif
+}
+
+/*
+* ：把当前清空所有 转换成指令
+* 用法： 末尾是1 指令00
+* 指令格式
+* (1111)    00       1
+* 指令前缀  指令名  扩展指令名
+*/
+
+void OutputClear(){
+#if defined(OUTPUT)
+	PrintPrefix1();
+	printf("001\n");
 #endif
 }
 
 
+/*
+* 功能：把当前样式导出
+* 用法：末尾是1 指令01 下划线间包含样式编号
+* 指令格式: 
+* (0000)   01       _StyleType_      1
+* 指令前缀 指令名    扩展指令名
+*/
+void OutputStyleType(int StyleType){
+#if defined(OUTPUT)
+	PrintPrefix0();
+	printf("01");
+	printf("_%d_1\n",StyleType);
 
-
-
+#endif
+}
 
 
 

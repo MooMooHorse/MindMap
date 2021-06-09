@@ -13,4 +13,7 @@ CMakeFiles/mindmaplib.dir/mindmap/MyInput.c.obj: \
  D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  D:/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
- D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/TextBox.h
+ D:/mingw64/x86_64-w64-mingw32/include/string.h \
+ D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ D:/GitHub/MindMap/lib/Line.h D:/GitHub/MindMap/lib/graphics.h \
+ D:/GitHub/MindMap/lib/TextBox.h D:/GitHub/MindMap/lib/ButtonRelated.h

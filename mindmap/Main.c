@@ -37,7 +37,6 @@ void KeyboardEventProcess(int key, int event)
 {
 	uiGetKeyboard(key,event); // GUI获取键盘
 	MyuiGetKeyboard(key,event); // GUI获取键盘
-	TextBoxGetKey(key,event);
 	display(); // 刷新显示
 }
 
@@ -53,19 +52,18 @@ void MouseEventProcess(int x, int y, int button, int event)
 }
 
 void Main(){
-// #if defined(DEBUG)
+#if defined(DEBUG)
 	freopen("../METADATA/debug.txt","w",stdout);
-// #endif
+#endif
 
-	ReadModel(1);
+	// ReadModel(1);
 	
 #if defined(OUTPUT)
-	char* OUTPUTFILENAME1="../OUTPUTDATA/usro1.txt";
-	char* OUTPUTFILENAME2="../OUTPUTDATA/usro2.txt";
-	char* OUTPUTFILENAME3="../OUTPUTDATA/usro3.txt";
+	char* OUTPUTFILENAME="../OUTPUTDATA/usro.txt";
 
-	freopen(OUTPUTFILENAME1,"w",stdout);
+	freopen(OUTPUTFILENAME,"w",stdout);
 #endif
+	
 
 	OutputFirstLine();
 
@@ -81,6 +79,12 @@ void Main(){
 	SetWindowTitle("MindMap");
 	
 	InitGraphics();
+
+	DefineColor("Layer01Dark",0.65,0.65,0.65);
+	DefineColor("Layer02Dark",0.5,0.5,0.5);
+	DefineColor("Layer03Dark",0.25,0.25,0.25);
+	DefineColor("Layer04Dark",0,0,0);
+	
 	winwidth = GetWindowWidth();
     winheight = GetWindowHeight();
 
@@ -91,7 +95,7 @@ void Main(){
 
 	MysetTextBoxColors("Black","White","Red","White",1);
 
-	AddTextBox(winwidth/2-1.5,winheight/2,winwidth/5,GetFontHeight()*2);
+//	AddTextBox(winwidth/2-1.5,winheight/2,winwidth/5,GetFontHeight()*2,1);
 	
 	return;
 
