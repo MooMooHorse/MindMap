@@ -238,8 +238,8 @@ void OutputClear(){
 * 功能：把当前样式导出
 * 用法：末尾是1 指令01 下划线间包含样式编号
 * 指令格式: 
-* (0000)   01       _StyleType_      1
-* 指令前缀 指令名    扩展指令名
+* (0000)   01       _StyleType_           1
+* 指令前缀 指令名          样式          扩展指令名
 */
 void OutputStyleType(int StyleType){
 #if defined(OUTPUT)
@@ -250,5 +250,20 @@ void OutputStyleType(int StyleType){
 #endif
 }
 
+
+/*
+* 功能： 把当前修改的文本框属性导出
+* 用法 末尾是1 指令 10 下划线间包含修改文本框的自定义的编号（从 1 开始） 和doa(deleate or add) (0 or 1)
+* 指令格式：
+* (0000)   10       _Index_doa_                   1
+* 指令前缀  指令名    文本框编号 宽度减小或增加    扩展指令名
+*/
+void OutputTextBoxProperty(int Index,int doa){
+#if defined(OUTPUT)
+	PrintPrefix0();
+	printf("10");
+	printf("_%d_%d_1\n",Index,doa);
+#endif
+}
 
 

@@ -15,4 +15,5 @@ void OutputAscii(int Index,int ch,int doi);
 void OutputFirstLine();
 void OutputClear();
 void OutputStyleType(int StyleType);
+void OutputTextBoxProperty(int Index,int aod);
 #endif

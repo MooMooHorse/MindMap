@@ -95,7 +95,7 @@ void AddTextBox(double x,double y,double w,double h,int fa){
 	PositionOfTextBox[TextBoxIndex].h=h;
 	OutputTextBox(x,y,w,h,TextBoxIndex,fa);
 }
-//接口 : 返回 ActivatedTextBox 的值
+//接口 : 返回 ActivatedTextBox 
 Textbox* GetActivatedTextBox(){
 	if(!ActivatedTextBox) return NULL;
 	return &PositionOfTextBox[ActivatedTextBox];
@@ -170,4 +170,34 @@ void EditBuffer(int Index,int ch,int doi){
 		break;
 		
 	}
+}
+
+typedef enum{Delete,Add} DOA;
+/*
+* 功能： 改变某个编号文本框的宽度，并保持中心不变，设定改变宽度为0.3,可以通过以下API ChangeGap(double gp)改变
+* 用法： 传入 改变宽度文本框编号，与宽度减少/增加 (0/1)
+*/
+static double Gap=0.3;
+void ChangeTextBoxProperty(int Index,int doa){
+	switch(doa){
+		case Delete:
+			PositionOfTextBox[Index].w-=Gap;
+			PositionOfTextBox[Index].x+=Gap/2;
+		break;
+		case Add:
+			PositionOfTextBox[Index].w+=Gap;
+			PositionOfTextBox[Index].x-=Gap/2;
+		break;
+	}
+}
+
+void ChangeGap(double gp){
+	Gap=gp;
+}
+/*
+* 功能： API 取Gap
+*/
+
+double GetGap(){
+	return Gap;
 }

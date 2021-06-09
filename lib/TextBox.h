@@ -15,5 +15,8 @@ int GetActivatedTextBoxIndex();
 void DrawTextBox();
 void EditBuffer(int Index,int ch,int doi);
 void ClearTextBox();
+void ChangeTextBoxProperty(int Index,int doa);
+void ChangeGap(double gp);
+double GetGap();
 extern double winwidth, winheight;
 #endif

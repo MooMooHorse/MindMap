@@ -229,10 +229,17 @@ void ReadModel(int StyleName){
                         Clear();
                     break;
                     case INSTR2:
-                        
                         j=7;
                         STY=GetDoubleNumber(j,ST);
                         ChangeStyleType(STY);
+                    break;
+                    case INSTR3:
+                        j=7;
+                        int tIndex=GetDoubleNumber(j,ST);
+                        while(ST[j]!='_') j++;
+                        j++;
+                        ChangeTextBoxProperty(tIndex,GetDoubleNumber(j,ST));
+
                     break;
                 }
             }

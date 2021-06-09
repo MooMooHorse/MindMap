@@ -5,6 +5,7 @@
         "mmsystem.h": "c",
         "stdio.h": "c",
         "display.h": "c",
-        "graphics.h": "c"
+        "graphics.h": "c",
+        "windows.h": "c"
     }
 }

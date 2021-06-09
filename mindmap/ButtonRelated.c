@@ -21,7 +21,7 @@ static int StackTop;
 static int LineActivated;
 
 static int StyleType=1;
-static Mode=0;
+static int Mode=0;
 static void ClearButton(){
 	StackTop=0;
 	LineActivated=0;
@@ -86,9 +86,10 @@ void DrawButton(){
 		ReadModel(1);
 		fclose(stdin);
 	}
-	if( Mybutton(GenUIID(0), 0.01+w/5*3+w, 0.01, w, h, "Add Init Button") ){
+	if( Mybutton(GenUIID(0), 0.01+w/5*3+w, 0.01, w, h, "Add Init TextBox") ){
 		switch (StyleType){
 			case 1:
+			
 				AddTextBox(winwidth/2-1.5,winheight/2,winwidth/5,GetFontHeight()*2,1);
 			break;
 			case 2:
@@ -104,8 +105,7 @@ void DrawButton(){
 		Mode^=1;
 	}
 	SetPenSize(1.5);
-	if( Mybutton(GenUIID(0), winwidth-w-0.01, h*2, w, h, "Add Line") )
-	{	
+	if( Mybutton(GenUIID(0), winwidth-w-0.01, h*2, w, h, "Add Line") ){	
 		if(GetActivatedTextBox()==NULL){
 			MydrawLabel(5,5,"Please choose a valid starting textbox first");
 			return ;
@@ -116,8 +116,7 @@ void DrawButton(){
 	}
 
 	SetPenSize(1.5);
-	if( Mybutton(GenUIID(0), winwidth-w-0.01, 0.01, w, h, "Add TextBox") )
-	{	
+	if( Mybutton(GenUIID(0), winwidth-w-0.01, 0.01, w, h, "Add TextBox") ){	
 		if(StackTop==0){
 			MydrawLabel(5,5,"Please draw a line first");
 			return ;
@@ -126,8 +125,35 @@ void DrawButton(){
 		AddTextBox(StackForTextBox[StackTop].x-w/2,StackForTextBox[StackTop].y-h/2,w,h,StackForTextBox[StackTop].Ind);//w,h 暂定和 button 一样 可以调整 可以优化成可用户调节大小
 		StackTop--;
 	}
-
 	
+	double wid=w/2,hei=h;
+	if( Mybutton(GenUIID(0), winwidth-2*wid-0.01, winheight-hei-0.01, wid, hei, "width+") ){
+		Textbox* TT=GetActivatedTextBox();
+		if(TT==NULL){
+			MydrawLabel(5,5,"Please choose a valid starting textbox first");
+			return ;
+		}
+		else{
+			int tindex=GetActivatedTextBoxIndex();
+			TT->w+=GetGap();
+			TT->x-=GetGap()/2;
+			OutputTextBoxProperty(tindex,1);
+		}
+	}
+
+	if( Mybutton(GenUIID(0), winwidth-wid-0.01, winheight-hei-0.01, wid, hei, "width-") ){
+		Textbox* TT=GetActivatedTextBox();
+		if(TT==NULL){
+			MydrawLabel(5,5,"Please choose a valid starting textbox first");
+			return ;
+		}
+		else{
+			int tindex=GetActivatedTextBoxIndex();
+			TT->w-=GetGap();
+			TT->x+=GetGap()/2;
+			OutputTextBoxProperty(tindex,0);
+		}
+	}
 
 }
 
